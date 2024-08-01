@@ -4,20 +4,9 @@ const cors = require("cors")
 const { PrismaClient } = require("@prisma/client")
 const prisma = new PrismaClient()
 
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://task-manager-frontend-dusky.vercel.app/"
-];
-
 const app = express()
 app.use(bodyParser.json())
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    allowedHeaders: ["Content-Type"],
-  })
-)
+app.use(cors())
 
 // Get all tasks
 app.get("/tasks", async (req, res) => {
