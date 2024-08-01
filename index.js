@@ -8,7 +8,7 @@ const app = express()
 app.use(bodyParser.json())
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", "https://task-manager-frontend-dusky.vercel.app/",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type"],
   })
